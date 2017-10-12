@@ -29,5 +29,5 @@ app.addEventListener("run-requested", function (event) {
         //args parameter contains deep link context
         console.log(event.userAppConfigArgs.parameter1);
     }
-}
+})
 ```
