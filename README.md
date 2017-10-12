@@ -10,20 +10,24 @@ Runtime 8.56.24.41+ required
 RVM 3.7.1+ required
 
 ### Example Deep Link:
-`fins://mydomain.com/path-to-manifest/app.json?$$parameter1=value1&$$paramater2=value2`
+```javascript
+fins://mydomain.com/path-to-manifest/app.json?$$parameter1=value1&$$paramater2=value2
+```
 
 ### Example usage of fin.desktop.main and run-requested:
+```javascript
 // On application launch parameters are passed through
-`fin.desktop.main(function(args) 
+fin.desktop.main(function(args) 
     {
     //args parameter contains deep link context
      console.log(args.parameter1);
-})`
+})
 
 // If app is already running parameters are passed through the “run-requested” event
-
-`app.addEventListener("run-requested", 
-    function (event) {
-        if(event.userAppConfigArgs){`
-//args parameter contains deep link context
-console.log(event.userAppConfigArgs.parameter1);
+app.addEventListener("run-requested", function (event) {
+    if(event.userAppConfigArgs){
+        //args parameter contains deep link context
+        console.log(event.userAppConfigArgs.parameter1);
+    }
+}
+```
