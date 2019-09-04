@@ -21,7 +21,7 @@ console.log(window.location.search);
 // ?parameter1=value1&parameter2=value2
 
 // If app is already running parameters are passed through the “run-requested” event
-app.addEventListener("run-requested", function (event) {
+fin.desktop.Application.getCurrent().addEventListener("run-requested", function (event) {
     if(event.userAppConfigArgs){
         //args parameter contains deep link context
         console.log(event.userAppConfigArgs.parameter1);
