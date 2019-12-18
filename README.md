@@ -17,8 +17,10 @@ fins://mydomain.com/path-to-manifest/app.json?$$parameter1=value1&$$paramater2=v
 ### Example usage of fin.desktop.main and run-requested:
 ```javascript
 // On application launch parameters are passed through to the main window
-console.log(window.location.search);
-// ?parameter1=value1&parameter2=value2
+fin.desktop.main(userAppConfigArgs => {
+    console.log(userAppConfigArgs);
+    // { parameter1: 'value1', parameter2: value2 }
+}
 
 // If app is already running parameters are passed through the “run-requested” event
 app.addEventListener("run-requested", function (event) {
