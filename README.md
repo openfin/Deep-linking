@@ -19,7 +19,7 @@ fins://mydomain.com/path-to-manifest/app.json?$$parameter1=value1&$$paramater2=v
 // On application launch parameters are passed through to the main window
 fin.desktop.main(userAppConfigArgs => {
     console.log(userAppConfigArgs);
-    // { parameter1: 'value1', parameter2: value2 }
+    // { parameter1: 'value1', parameter2: 'value2' }
 }
 
 // If app is already running parameters are passed through the “run-requested” event
